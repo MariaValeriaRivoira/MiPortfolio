@@ -1,0 +1,254 @@
+:root {
+    --blanco: #ffffff;
+    --negro: #000000;
+    --gris:#aaa7a7;
+    --fuenteTitulo:'Playfair Display', serif;
+    --fuentePrincipal:'Rubik', sans-serif;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+h1{
+    font-family: var(--fuenteTitulo);
+    font-size: 5rem;
+    text-shadow: var(--blanco) 2px 2px 3px;
+    text-align: right;
+
+}
+h2, h3, h4{
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+}
+h3{
+   text-decoration:underline;
+   color: var(--blanco);
+}
+h4{
+    text-align: center;
+    color: var(--blanco);
+}
+h5{
+    
+    text-align: center;
+    color: var(--blanco);
+    font-size: 1.5rem;
+}
+p{
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--fuentePrincipal);
+    margin: 0 2rem;
+    
+    
+}
+.parrafo{
+    background-color: #efc7fd8b;
+    border-radius: 2rem;
+    margin: 0 5rem;
+}
+.texto{
+    background-color: var(--negro);
+    margin: 1rem;
+    border-radius: 10%;
+    padding: 1rem;
+}
+body{
+	overflow-x: hidden;
+    background: #FF0099;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #493240, #FF0099);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #493240, #FF0099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+}
+html{
+	font-size: 62.5%;
+}
+.contenidoPrincipal{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+}
+.contenidoPrincipal_div{
+   
+    display: block;
+    text-align: center;
+    margin: auto 0;
+    /*padding: 2rem 0;*/
+    width: 95%;
+    background-image: url(imagenes/fondoProyectos2.png);
+   
+    border: 1rem solid black;
+  border-image-width: 1rem;
+  border-image-source: url(imagenes/borde.png);
+  border-image-slice: 110;
+  border-image-outset: 0px;
+  border-image-repeat:round;
+}
+
+
+.contenidoPrincipal_divImg{
+   
+    
+    display: grid;
+    width: 100%;
+    gap: 20px;
+    grid-template-areas: 
+        "section1"
+        "section2"
+        "section3" 
+        "section4"
+    ;
+  
+}
+
+.contenidoPrincipal_divImg > #section1{
+    grid-area: section1;
+
+}
+.contenidoPrincipal_divImg > #section2{
+    grid-area: section2;
+
+}
+.contenidoPrincipal_divImg > #section3{
+    grid-area: section3;
+
+}
+.contenidoPrincipal_divImg > #section4{
+    grid-area: section4;
+
+}
+
+
+
+
+.contenidoPrincipal_imagenPrinc1, .contenidoPrincipal_imagenPrinc2, .contenidoPrincipal_imagenPrinc3, .contenidoPrincipal_imagenPrinc4 {
+    width: 80%;
+    border: 3px solid white;
+    
+    margin: 3rem 2rem 1rem 2rem;
+ 
+}
+
+
+
+
+
+.contenidoPrincipal_divVarios{
+    display: grid;
+    grid-template-areas: 
+    "nombre nombre"
+    "sobreMi miFoto"
+    "sobreMi miFoto"
+    "tecnologia tecnologia"
+    "tecnologia tecnologia"
+        ;
+}
+
+.contenidoPrincipal_divVarios > #nombre{
+    grid-area: nombre;
+
+}
+.contenidoPrincipal_divVarios > #sobreMi{
+    grid-area: sobreMi;
+
+}
+.contenidoPrincipal_divVarios > #miFoto{
+    grid-area: miFoto;
+
+}
+.contenidoPrincipal_divVarios > #tecnologia{
+    grid-area: tecnologia;
+
+}
+#miFoto{
+    margin-top: 6rem;
+    text-align: center;
+}
+#sobreMi{
+    margin-top: 2rem;
+}
+.contenidoPrincipal_divVarios_Tit_img{
+    width:60%;
+    border: 4px solid var(--blanco);
+    border-radius: 15%;
+    margin: auto;
+   
+    border-style:double;
+    
+}
+.contenidoPrincipal_divVarios_Tec{
+    display: grid;
+    grid-template-columns: 1fr 2fr ;
+    margin: 2rem;
+}
+.contenidoPrincipal_divVarios_Tec_icon{
+    margin: 2rem;
+    text-align: center;
+}
+.imgCV:hover, .imgContacto:hover{
+   
+        filter: opacity(0.4) drop-shadow(0 0 0 var(--gris));
+   
+    
+}
+
+
+.contenidoPrincipal_divVarios_Tec_fig{
+    text-align: center;
+    padding: 2rem;
+    background-color: #5b043a84;
+    border-radius: 55%;
+}
+.contenidoPrincipal_divVarios_Tec_fig_tit{
+    margin-top: 3rem;
+    
+}
+.contenidoPrincipal_divVarios_Tec_fig_icon{
+    margin-top: 1rem;
+    text-align: center;
+}
+.tecImg, .tecImg2, .tecImg3{
+    border: 2px solid #000;
+}
+.tecImg{
+    max-width: 14%;
+    margin: 1rem;
+    
+}
+.tecImg2{
+    max-width: 10%;
+   
+}
+.tecImg3{
+    max-width: 12%;
+    margin: 1rem;
+}
+@media (max-width: 1140px){
+    .contenidoPrincipal{
+        display: block;
+            
+    }
+    .contenidoPrincipal_imagenPrinc{
+        width: 100%;
+       
+        
+    }
+    .contenidoPrincipal_divImg{
+       text-align: center;
+        
+    }
+    .contenidoPrincipal_divVarios{
+        display: block;
+    }
+    .contenidoPrincipal_divVarios_Tit_img{
+        width:35%;    
+       margin-bottom: 2rem;
+    }
+}
+@media (max-width:468px){
+    .contenidoPrincipal_divVarios_Tec{
+        display: block;
+    } 
+
+}
