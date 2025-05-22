@@ -1,255 +1,483 @@
 :root {
     --blanco: #ffffff;
-    --negro: #000000;
-    --gris:#aaa7a7;
-    --fuenteTitulo:'Playfair Display', serif;
-    --fuentePrincipal:'Rubik', sans-serif;
+    --negro: #181c24;
+    --gris: #aaa7a7;
+    --azul-ia: #1a2746;
+    --violeta-ia: #7e5cff;
+    --celeste-ia: #aee9f9;
+    --fuenteTitulo: 'Playfair Display', serif;
+    --fuentePrincipal: 'Rubik', sans-serif;
 }
 
-*{
-	margin: 0;
-	padding: 0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-h1{
+
+body {
+    min-height: 100vh;
+    background: url('imagenes/fondo IA.png') repeat, linear-gradient(135deg, var(--azul-ia) 0%, var(--violeta-ia) 100%);
+    background-size: 340px, cover;
+    color: var(--negro);
+    position: relative;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
     font-family: var(--fuenteTitulo);
     font-size: 5rem;
     text-shadow: var(--blanco) 2px 2px 3px;
     text-align: right;
-
+    z-index: 1;
+    position: relative;
 }
-h2, h3, h4{
+
+h2, h3, h4 {
     font-family: var(--fuentePrincipal);
     font-size: 3rem;
+    z-index: 1;
+    position: relative;
 }
-h3{
-   text-decoration:underline;
-   color: var(--blanco);
+
+h3 {
+    text-decoration: underline;
+    color: var(--violeta-ia);
 }
-h4{
+
+h4 {
     text-align: center;
-    color: var(--blanco);
+    color: var(--violeta-ia);
 }
-h5{
-    
+
+h5 {
     text-align: center;
     color: var(--blanco);
     font-size: 1.5rem;
 }
-p{
+
+p {
     text-align: center;
     font-size: 1.5rem;
     font-family: var(--fuentePrincipal);
     margin: 0 2rem;
-    
-    
+    z-index: 1;
+    position: relative;
 }
-.parrafo{
-    background-color: #efc7fd8b;
+
+ul.tecnologias-lista {
+    list-style: disc inside;
+    text-align: left;
+    margin: 1rem 2rem;
+    padding: 0;
+    font-size: 1.5rem;
+    color: var(--negro);
+}
+
+.parrafo {
+    background: rgba(255,255,255,0.85);
     border-radius: 2rem;
-    margin: 0 5rem;
+    margin: 2rem 5rem;
+    box-shadow: 0 4px 24px rgba(126, 92, 255, 0.10);
+    padding: 2rem 3rem;
+    transition: box-shadow 0.3s;
+    z-index: 1;
+    position: relative;
 }
-.texto{
-    background-color: var(--negro);
+.parrafo:hover {
+    box-shadow: 0 8px 32px rgba(126, 92, 255, 0.18);
+}
+
+/* Mejor contraste y visibilidad en Sobre mí y Mi Perfil */
+.perfil-sobremi .parrafo,
+.perfil-miperfil .parrafo {
+    color: #232323;
+    font-weight: 500;
+    background: rgba(255,255,255,0.96);
+}
+.perfil-sobremi h4,
+.perfil-miperfil h4 {
+    color: var(--azul-ia);
+    font-weight: bold;
+}
+
+/* Mi CV y Contacto aún más grandes y con texto debajo */
+.perfil-cv-contacto {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.perfil-cv-contacto-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.perfil-cv-contacto-label {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-shadow: 0 1px 4px #0008;
+    letter-spacing: 1px;
+}
+.perfil-cv-contacto a img.imgCV,
+.perfil-cv-contacto a img.imgContacto {
+    width: 80px;
+    height: 80px;
+    margin: 0 1rem;
+    transition: filter 0.2s;
+}
+.imgCV:hover, .imgContacto:hover {
+    filter: opacity(0.4) drop-shadow(0 0 0 var(--gris));
+}
+
+/* Igualar altura y alineación de las secciones QA y Desarrollo */
+.secciones-flex {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    margin: 3rem 0;
+}
+
+.seccion-qaia, .seccion-desarrollo {
+    flex: 1 1 0;
+    min-width: 320px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    background: transparent;
+    min-height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+}
+
+.seccion-qaia > .parrafo,
+.seccion-desarrollo > .contenidoPrincipal_div {
+    flex: 1 1 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Ajuste extra para igualar altura visual de Desarrollo y QA */
+.seccion-desarrollo > .contenidoPrincipal_div {
+    min-height: 445px; /* Ajusta este valor según la altura visual de QA */
+}
+
+/* Centrar títulos de QA & Inteligencia Artificial y Desarrollo en sus secciones */
+.seccion-qaia h3,
+.seccion-desarrollo h3 {
+    color: var(--azul-ia);
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.seccion-qaia {
+    overflow: hidden;
+}
+
+/* QA & IA grid: dos columnas, robot izquierda, testmate+texto derecha */
+.ia-qa-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.col-izq-robot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.robot-ia-img {
+    width: 90%;
+    max-width: 180px;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    display: block;
+}
+
+.col-der-testmate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.col-der-testmate > div {
+    width: 100%;
+}
+
+.col-der-testmate p {
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+}
+
+/* Agrandar un poco más la imagen de TestMate y centrar */
+.testmate-img {
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 12px rgba(126, 92, 255, 0.15);
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+}
+
+.texto {
+    background-color: var(--azul-ia);
     margin: 1rem;
     border-radius: 10%;
     padding: 1rem;
+    color: var(--blanco);
 }
-body{
-	overflow-x: hidden;
-    background: #FF0099;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #493240, #FF0099);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #493240, #FF0099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: #000000;
-}
-html{
-	font-size: 62.5%;
-}
-.contenidoPrincipal{
+
+.perfil-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    width: 100%;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:
+        "sobremi foto miperfil";
+    gap: 2rem;
+    align-items: start;
+    margin: 3rem 0;
 }
-.contenidoPrincipal_div{
-   
-    display: block;
-    text-align: center;
-    margin: auto 0;
-    /*padding: 2rem 0;*/
-    width: 95%;
-    background-image: url(imagenes/fondoProyectos2.png);
-   
-    border: 1rem solid black;
-  border-image-width: 1rem;
-  border-image-source: url(imagenes/borde.png);
-  border-image-slice: 110;
-  border-image-outset: 0px;
-  border-image-repeat:round;
+.perfil-sobremi { grid-area: sobremi; }
+.perfil-foto { 
+    grid-area: foto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.perfil-miperfil { grid-area: miperfil; }
 
-
-.contenidoPrincipal_divImg{
-   
-    
-    display: grid;
-    width: 100%;
-    gap: 20px;
-    grid-template-areas: 
-        "section1"
-        "section2"
-        "section3" 
-        "section4"
-    ;
-  
-}
-
-.contenidoPrincipal_divImg > #section1{
-    grid-area: section1;
-
-}
-.contenidoPrincipal_divImg > #section2{
-    grid-area: section2;
-
-}
-.contenidoPrincipal_divImg > #section3{
-    grid-area: section3;
-
-}
-.contenidoPrincipal_divImg > #section4{
-    grid-area: section4;
-
-}
-
-
-
-
-.contenidoPrincipal_imagenPrinc1, .contenidoPrincipal_imagenPrinc2, .contenidoPrincipal_imagenPrinc3, .contenidoPrincipal_imagenPrinc4 {
-    width: 80%;
-    border: 3px solid white;
-    
-    margin: 3rem 2rem 1rem 2rem;
- 
-}
-
-
-
-
-
-.contenidoPrincipal_divVarios{
-    display: grid;
-    grid-template-areas: 
-    "nombre nombre"
-    "sobreMi miFoto"
-    "sobreMi miFoto"
-    "tecnologia tecnologia"
-    "tecnologia tecnologia"
-        ;
-}
-
-.contenidoPrincipal_divVarios > #nombre{
-    grid-area: nombre;
-
-}
-.contenidoPrincipal_divVarios > #sobreMi{
-    grid-area: sobreMi;
-
-}
-.contenidoPrincipal_divVarios > #miFoto{
-    grid-area: miFoto;
-
-}
-.contenidoPrincipal_divVarios > #tecnologia{
-    grid-area: tecnologia;
-
-}
-#miFoto{
-    margin-top: 6rem;
-    text-align: center;
-}
-#sobreMi{
-    margin-top: 2rem;
-}
-.contenidoPrincipal_divVarios_Tit_img{
-    width:60%;
+.contenidoPrincipal_divVarios_Tit_img {
+    width: 220px;
     border: 4px solid var(--blanco);
     border-radius: 15%;
     margin: auto;
-   
-    border-style:double;
-    
-}
-.contenidoPrincipal_divVarios_Tec{
-    display: grid;
-    grid-template-columns: 1fr 2fr ;
-    margin: 2rem;
-}
-.contenidoPrincipal_divVarios_Tec_icon{
-    margin: 2rem;
-    text-align: center;
+    border-style: double;
+    box-shadow: 0 2px 12px rgba(126, 92, 255, 0.15);
+    background: #fff;
 }
 
-.imgCV:hover, .imgContacto:hover{
-   
-        filter: opacity(0.4) drop-shadow(0 0 0 var(--gris));
-   
-    
+.contenidoPrincipal_divVarios_Tec {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 0;
 }
 
-
-.contenidoPrincipal_divVarios_Tec_fig{
+.contenidoPrincipal_divVarios_Tec_fig {
     text-align: center;
     padding: 2rem;
-    background-color: #5b043a84;
-    border-radius: 55%;
+    background-color: #f6f6ff;
+    border-radius: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 12px rgba(126, 92, 255, 0.10);
 }
-.contenidoPrincipal_divVarios_Tec_fig_tit{
-    margin-top: 3rem;
-    
-}
-.contenidoPrincipal_divVarios_Tec_fig_icon{
+
+.contenidoPrincipal_divVarios_Tec_fig_tit {
     margin-top: 1rem;
+}
+
+.contenidoPrincipal_divVarios_Tec_fig_icon {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.contenidoPrincipal_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto 0;
+    width: 95%;
+    background: rgba(255,255,255,0.85);
+    border-radius: 2rem;
+    box-shadow: 0 4px 24px rgba(126, 92, 255, 0.10);
+    border: none;
+    margin-bottom: 2rem;
+    height: 100%;
+}
+
+.contenidoPrincipal_imagenPrinc1,
+.contenidoPrincipal_imagenPrinc2,
+.contenidoPrincipal_imagenPrinc3,
+.contenidoPrincipal_imagenPrinc4 {
+    width: 80%;
+    border: 3px solid white;
+    margin: 3rem 2rem 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(126, 92, 255, 0.10);
+    background: #fff;
+}
+
+@media (max-width: 1100px) {
+    .perfil-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "foto"
+            "sobremi"
+            "miperfil";
+    }
+    .perfil-foto, .perfil-sobremi, .perfil-miperfil {
+        justify-content: center;
+        align-items: center;
+    }
+    .perfil-cv-contacto {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .secciones-flex {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: stretch;
+    }
+    .seccion-qaia, .seccion-desarrollo {
+        max-width: 100%;
+        min-height: unset;
+        height: auto;
+    }
+    .ia-qa-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .col-izq-robot {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    .robot-ia-img {
+        width: 120px;
+        max-width: 60vw;
+        max-height: 160px;
+    }
+    .col-der-testmate {
+        align-items: center;
+    }
+    .contenidoPrincipal_div {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    h4, h3 {
+        font-size: 2rem;
+    }
+    .contenidoPrincipal_divVarios_Tec {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .testmate-img {
+        width: 100%;
+        max-width: 95vw;
+    }
+}
+
+@media (max-width: 468px) {
+    .parrafo {
+        margin: 0.5rem;
+        padding: 1rem 0.5rem;
+        font-size: 1rem;
+    }
+    .testmate-img {
+        max-width: 90vw;
+    }
+    .perfil-cv-contacto {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+.main-header {
+    width: 100%;
+    background: linear-gradient(90deg, #7e5cff 0%, #aee9f9 100%);
+    padding: 2.5rem 0 2rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 24px rgba(126, 92, 255, 0.10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 2px 12px #1a2746cc, 0 1px 0 #7e5cff;
+    margin: 0;
+    padding: 0 2rem;
     text-align: center;
 }
-.tecImg, .tecImg2, .tecImg3{
-    border: 2px solid #000;
-}
-.tecImg{
-    max-width: 14%;
-    margin: 1rem;
-    
-}
-.tecImg2{
-    max-width: 10%;
-   
-}
-.tecImg3{
-    max-width: 12%;
-    margin: 1rem;
-}
-@media (max-width: 1140px){
-    .contenidoPrincipal{
-        display: block;
-            
-    }
-    .contenidoPrincipal_imagenPrinc{
-        width: 100%;
-       
-        
-    }
-    .contenidoPrincipal_divImg{
-       text-align: center;
-        
-    }
-    .contenidoPrincipal_divVarios{
-        display: block;
-    }
-    .contenidoPrincipal_divVarios_Tit_img{
-        width:35%;    
-       margin-bottom: 2rem;
-    }
-}
-@media (max-width:468px){
-    .contenidoPrincipal_divVarios_Tec{
-        display: block;
-    } 
 
+@media (max-width: 600px) {
+    .main-header h1 {
+        font-size: 2.2rem;
+        padding: 0 1rem;
+    }
+    .main-header {
+        padding: 1.2rem 0 1rem 0;
+    }
+}
+.main-footer {
+    width: 100%;
+    background: linear-gradient(90deg, #aee9f9 0%, #7e5cff 100%);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0 1.2rem 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+    box-shadow: 0 -2px 12px rgba(126, 92, 255, 0.10);
+}
+
+.main-footer p {
+    margin: 0;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 600px) {
+    .main-footer {
+        font-size: 1.1rem;
+        padding: 1rem 0 0.8rem 0;
+    }
+    .main-footer p {
+        font-size: 1.1rem;
+    }
 }
